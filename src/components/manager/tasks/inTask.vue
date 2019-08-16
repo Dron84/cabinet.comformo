@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    import changeStatus from './changeStatus'
+    import changeStatus from '@/components/forms/changeStatus'
     import axios from 'axios'
     const { base64encode, base64decode } = require('nodejs-base64');
 

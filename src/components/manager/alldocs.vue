@@ -31,7 +31,7 @@
 
 <script>
     import axios from 'axios'
-    import changeFilter from '@/components/manager/tasks/changeStatus.vue'
+    import changeFilter from '@/components/forms/changeStatus'
     export default {
         name: "alldocs",
         components:{changeFilter,},

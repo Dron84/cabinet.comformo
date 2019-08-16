@@ -75,7 +75,7 @@
 </template>
 
 <script>
-    import changeStatus from './tasks/changeStatus'
+    import changeStatus from '@/components/forms/changeStatus'
     const { base64encode, base64decode } = require('nodejs-base64');
     import axios from 'axios'
     export default {

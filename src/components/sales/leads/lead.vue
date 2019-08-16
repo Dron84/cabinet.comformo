@@ -128,7 +128,7 @@
 </template>
 
 <script>
-    import changeStatus from '@/components/manager/tasks/changeStatus'
+    import changeStatus from '@/components/forms/changeStatus'
     import instagram from '@/components/forms/social/instagram'
     import facebook from '@/components/forms/social/facebook'
     import twitter from '@/components/forms/social/twitter'

@@ -30,7 +30,7 @@
 
 <script>
     import axios from 'axios'
-    import changeStatus from './changeStatus'
+    import changeStatus from '@/components/forms/changeStatus'
     const { base64encode, base64decode } = require('nodejs-base64');
 
     export default {
