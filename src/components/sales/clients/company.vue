@@ -33,8 +33,8 @@
                         <div class="centrize">Save file</div>
                         <div class="centrize">Status <changeStatus imageLink="/static/img/filter.svg" imageTitle="Change Filter" :dropDownList="filterList" statusNow="Not filtered" @selectedItem="changeFilter($event)"></changeStatus></div>
                     </div>
-                    <div class="table_body" style="max-height: 100%;">
-                        <div class="tableRow searchRow" v-for="item in docs">
+                    <div class="table_body" style="max-height: 100%;" v-if="docs!='Sql is empty'">
+                        <div class="tableRow searchRow" v-for="item in docs" >
                             <div class="centrize">{{item.file_name.replace(item.uniqid,'')}}</div>
                             <div class="centrize">{{item.date}}</div>
                             <div class="centrize"><a :href="showUrl(item,company.id)" target="_blank" class="button" style="height: 30px;">OPEN</a></div>
@@ -42,6 +42,9 @@
                             <div class="centrize"><changeStatus :statusNow="item.status" :dropDownList="StatusDropdownList" @selectedItem="changeStatus($event,item.id)"></changeStatus></div>
                             <div class="centrize searchStatus" style="display: none;">{{item.status}}</div>
                         </div>
+                    </div>
+                    <div class="table_body" v-else>
+                        <div class="centrize">No documents for this company</div>
                     </div>
                 </div>
 
@@ -116,11 +119,17 @@
                     }
                 })
                 ClientsCompany.forEach(item=>{
-                    if(item.company.id==id[1]){
-                        this.company= item.company
-                        this.docs = item.docs
+                    if(item.id==id[1]){
+                        this.company = item
+                        this.getCompanyDocs(item.id)
                     }
                 })
+            },
+            getCompanyDocs(companyId){
+                axios.post(this.$store.getters.getPostUrl,'getCompanyDocs=load&companyId='+companyId)
+                    .then(res=>{
+                        this.docs = res.data
+                    })
             },
             getCountryImg(id){
                 const countrys = this.$store.getters.getOurCountry
@@ -190,17 +199,6 @@
                         }
                     })
             },
-            loadAllData(){
-                this.preloader = true
-                axios.post(this.$store.getters.getPostUrl,'getClients=all')
-                    .then(res=>{
-                        this.$store.commit('set_managerClients',res.data.users)
-                        this.$store.commit('set_managerClientsCompany',res.data.companys)
-                        this.preloader = false
-                        this.loadData()
-                    })
-
-            },
             loadUrl(row,id){
                 return '/server/post/getFile.php?loadmyfile='+row.base_name+'&companyId='+id+'&type='+row.type
             },
@@ -209,12 +207,12 @@
             },
             loadInvoces(){
                 axios.post(this.$store.getters.getPostUrl,'invoce=getAll').then(res=>{
-                    console.log(res.data)
+                    // console.log(res.data)
                     this.invoces = res.data
                 })
             }
         },
-        mounted(){
+        created(){
             this.loadData()
             this.loadInvoces()
         }

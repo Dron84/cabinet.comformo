@@ -3,26 +3,24 @@
         <h3>Client name: {{client.firstName+' '+client.lastName}}</h3>
         <p class="centrize">Client companys below</p>
         <div class="companys">
-            <div class="companys_body">
-                <div v-if="companys.length>0">
-                    <div class="companys_company box_shadow_hover_roundshadow" v-for="item in companys">
-                        <router-link :to="'/manager/clients/'+$route.params.id+'/'+$route.params.id+','+item.id" style="text-decoration: none">
-                            <img :src="getCountry(item.jurisdiction).CountryImg" class="company_flag"/>
-                            <div class="company_date">{{item.datetime}}</div>
-                            <h3 class="company_header">{{item.companyName}}</h3>
-                            <div class="company_country">{{getCountry(item.jurisdiction).CountryName}}</div>
-                            <div class="centrize">
-                                <div class="doughnut">
-                                    <DoughnutChart :percent="getPercent(item)" :foregroundColor="ChartColor(parseInt(getPercent(item)))" :backgroundColor="chart.backgroundColor" :radius="chart.radius" :width="chart.width" :height="chart.height" :strokeWidth="chart.strokeWidth" :visibleValue="chart.visibleValue" :classValue="chart.classValue"></DoughnutChart>
-                                    <div class="doughnut_chart_after" :style="ChartStyle(ChartColor(parseInt(getPercent(item))))">{{Math.round(getPercent(item))}}%</div>
-                                </div>
+            <div class="companys_body" v-if="companys.length>0">
+                <div class="companys_company box_shadow_hover_roundshadow" v-for="item in companys">
+                    <router-link :to="'/sales/clients/'+$route.params.id+'/'+$route.params.id+','+item.id" style="text-decoration: none">
+                        <img :src="getCountry(item.jurisdiction).CountryImg" class="company_flag"/>
+                        <div class="company_date">{{item.datetime}}</div>
+                        <h3 class="company_header">{{item.companyName}}</h3>
+                        <div class="company_country">{{getCountry(item.jurisdiction).CountryName}}</div>
+                        <div class="centrize">
+                            <div class="doughnut">
+                                <DoughnutChart :percent="getPercent(item)" :foregroundColor="ChartColor(parseInt(getPercent(item)))" :backgroundColor="chart.backgroundColor" :radius="chart.radius" :width="chart.width" :height="chart.height" :strokeWidth="chart.strokeWidth" :visibleValue="chart.visibleValue" :classValue="chart.classValue"></DoughnutChart>
+                                <div class="doughnut_chart_after" :style="ChartStyle(ChartColor(parseInt(getPercent(item))))">{{Math.round(getPercent(item))}}%</div>
                             </div>
-                            <div class="company_more box_shadow">more details</div>
-                        </router-link>
-                    </div>
+                        </div>
+                        <div class="company_more box_shadow">more details</div>
+                    </router-link>
                 </div>
-                <div v-else class="centrize">There are no companies in this client</div>
             </div>
+            <div v-else class="centrize">There are no companies in this client</div>
         </div>
     </div>
 </template>
