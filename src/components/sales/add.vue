@@ -77,10 +77,8 @@
         data() {
             return {
                 typeOptions: [
-                    {label: 'Company', index: 1}, {label: 'Bank Account', index: 2}, {
-                        label: 'Structure',
-                        index: 3
-                    }, {label: 'PSP', index: 4}, {label: 'Website', index: 5}
+                    {label: 'Company', index: 1}, {label: 'Bank Account', index: 2},
+                    {label: 'Structure',index: 3}, {label: 'PSP', index: 4}, {label: 'Website', index: 5}
                 ],
                 okClass: 'ok',
                 errorClass: 'err',

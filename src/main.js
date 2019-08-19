@@ -19,7 +19,7 @@ Vue.use(Vuex,BootstrapVue,VueCookie)
 const store = new Vuex.Store({
     state:{
         // post_url: 'http://comformo.local/server/post/index.php',
-        post_url: 'https://cabinet.comformo.com/static/server/post/index.php',
+        post_url: 'https://cabinet.comformo.com/server/post/index.php',
         preload: false,
         login: false,
         loginIn: null,
