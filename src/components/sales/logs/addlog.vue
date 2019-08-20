@@ -16,11 +16,11 @@
                         <button type="button" class="close" @click=" modal = false">&times;</button>
                             <div class="modal-body">
                                 <formselect labelName="User" :options="users" @selected="selectUser($event)"></formselect>
-                                <forminput labelName="Description" @inputModel="descriptionInput($event)"></forminput>
                                 <div class="input-wrapper">
                                     <date class="form-control valid" id="dateTo" v-model="dateTo"></date>
                                     <label for="dateTo" class="label-up">Date to Contact</label>
                                 </div>
+                                <forminput labelName="Description" @inputModel="descriptionInput($event)"></forminput>
                                 <formproductselect :hideSelected="true" @selectedProduct="selectProduct($event)" labelName="Product" :placeholder="''" :multiple="true" :closeOnSelect="false"></formproductselect>
                             </div>
                         <div class="centrize" style="width: 200px;">
