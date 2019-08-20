@@ -18,13 +18,13 @@
                                 <formselect labelName="User" :options="users" @selected="selectUser($event)" :class="[selectedUser!='' ? 'ok': 'err']"></formselect>
                                 <forminput labelName="Description" @inputModel="descriptionInput($event)" :class="[description!='' ? 'ok': 'err']"></forminput>
                                 <div class="input-wrapper">
-                                    <date class="form-control" id="dateTo" v-model="dateTo" :format="customFormatter()" :class="[dateTo!='' ? 'ok': 'err']"></date>
+                                    <date class="form-control" id="dateTo" v-model="dateTo" :class="[dateTo!='' ? 'ok': 'err']"></date>
                                     <label for="dateTo" class="label-up">Date to Contact</label>
                                 </div>
-                                <formproductselect @selectedProduct="selectProduct($event)" labelName="Product"></formproductselect>
+                                <formproductselect :hideSelected="true" @selectedProduct="selectProduct($event)" labelName="Product" :placeholder="''" :multiple="true" :closeOnSelect="false"></formproductselect>
                             </div>
-                        <div class="centrize" style="position: absolute; bottom: -20px; width: 200px;left: 32%;">
-                            <button type="button" class="submit"  style="background-image: -webkit-linear-gradient( 128deg, rgb(255,136,0) 0%, rgb(251,159,53) 0%, rgb(255,136,0) 97%);width: 100%;">Add Log</button>
+                        <div class="centrize" style="width: 200px;">
+                            <button type="button" class="submit"  style="background-image: -webkit-linear-gradient( 128deg, rgb(255,136,0) 0%, rgb(251,159,53) 0%, rgb(255,136,0) 97%);width: 100%;" @click="addlog()">Add Log</button>
                         </div>
                     </div>
                 </div>
@@ -38,6 +38,7 @@
     import forminput from '@/components/forms/formInput'
     import formselect from '@/components/forms/formselect'
     import formproductselect from '@/components/forms/formproductselect.vue'
+    import axios from 'axios'
     let moment = require('moment');
     export default {
         name: "addlog",
@@ -81,6 +82,18 @@
             },
             selectProduct(data){
                 this.selectedProduct=data
+            },
+            addlog(){
+                console.log(this.selectedUser,this.selectedProduct,this.description, this.customFormatter(this.dateTo))
+                let fd = new FormData
+                fd.append('userId', this.selectedUser.index)
+                fd.append('productlist',JSON.stringify(this.selectedProduct))
+                fd.append('descripton',this.description)
+                fd.append('dateToContact',this.customFormatter(this.dateTo))
+                fd.append('log','add')
+                axios.post(this.$store.getters.getPostUrl, fd).then(res=>{
+                    console.log(res.data)
+                })
             }
         },
         created(){

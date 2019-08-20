@@ -26,9 +26,7 @@
                 <input type="text" id='email' :class="[isEmailValid()]" v-model="email" tabindex="3" required>
                 <label for="email">Email</label>
             </div>
-            <formselect :hideSelected="true" @selected="selectedType($event)" labelName="What needs"
-                        selectLabelName="label" selectLabelIndex="index" :searchable="false" :options="typeOptions"
-                        :placeholder="''" :multiple="true" :closeOnSelect="false" :values="type"></formselect>
+            <formproductselect :hideSelected="true" @selectedProduct="selectedType($event)" labelName="What product needs" :placeholder="''" :multiple="true" :closeOnSelect="false"></formproductselect>
         </div>
         <div class="duble_side_box">
 
@@ -69,11 +67,12 @@
     import formselect from '@/components/forms/formselect.vue'
     import formselectCountry from '@/components/forms/formselectCountry.vue'
     import formUsersStatus from '@/components/forms/formUsersStatus.vue'
+    import formproductselect from '@/components/forms/formproductselect.vue'
     import axios from 'axios'
 
     export default {
         name: "add",
-        components: {sm, formselect, formselectCountry,formUsersStatus},
+        components: {sm, formselect, formselectCountry,formUsersStatus,formproductselect},
         data() {
             return {
                 typeOptions: [
