@@ -18,19 +18,23 @@
                                 <formselect labelName="User" :options="users" @selected="selectUser($event)"></formselect>
                                 <div class="input-wrapper">
                                     <date class="form-control valid" id="dateTo" v-model="dateTo"></date>
-                                    <label for="dateTo" class="label-up">Date to Contact</label>
+                                    <label for="dateTo" class="label-up" style="position: absolute;top: -6px;left: 6px;font-family: 'Brandon Grotesque';font-weight: 500;font-size: .8em;letter-spacing: .05em;line-height: .8em;text-align: left;color: #2f2f2f;background-color: #fff;">Date to Contact</label>
                                 </div>
                                 <div class="input_group">
-                                    <timepicker format="hh:mm" v-model="timeTo"></timepicker>
+                                    <timepicker format="HH:mm" id="timeTo" :minute-interval="5" @change="setTime($event)"></timepicker>
+                                    <label for="timeTo" class="label-up" style="position: absolute;top: -6px;left: 6px;font-family: 'Brandon Grotesque';font-weight: 500;font-size: .8em;letter-spacing: .05em;line-height: .8em;text-align: left;color: #2f2f2f;background-color: #fff;">Time to Contact</label>
                                 </div>
                                 <forminput labelName="Description" @inputModel="descriptionInput($event)"></forminput>
                                 <formproductselect :hideSelected="true" @selectedProduct="selectProduct($event)" labelName="Product" :placeholder="''" :multiple="true" :closeOnSelect="false"></formproductselect>
                             </div>
-                        <div class="centrize" style="width: 200px;">
+                        <div class="centrize" style="width: 200px;" v-if="!preload">
+                            <button v-if="addStatus=='disabled'" type="button" class="submit"  style="width: 100%;" disabled="disabled">Add Log</button>
                             <button v-if="addStatus==''" type="button" class="submit"  style="background-image: -webkit-linear-gradient( 128deg, rgb(255,136,0) 0%, rgb(251,159,53) 0%, rgb(255,136,0) 97%);width: 100%;" @click="addlog()">Add Log</button>
-                            <button v-else-if="addStatus=='wait'" type="button" class="submit"  style="background-image: -webkit-linear-gradient( 128deg, rgb(255,136,0) 0%, rgb(251,159,53) 0%, rgb(255,136,0) 97%);width: 100%;">Wait
-                                <img src="/static/img/loading.gif" alt="" height="20"></button>
-                            <button v-else-if="addStatus=='added'" type="button" class="submit"  style="background-image: -webkit-linear-gradient( 128deg, rgb(255,136,0) 0%, rgb(251,159,53) 0%, rgb(255,136,0) 97%);width: 100%;">Log is Added</button>
+                        </div>
+                        <div class="centrize" style="width: 200px;" v-else>
+                            <button type="button" class="submit"  style="background-image: -webkit-linear-gradient( 128deg, rgb(255,136,0) 0%, rgb(251,159,53) 0%, rgb(255,136,0) 97%);width: 100%;">Wait
+                                <img src="/static/img/loading.gif" alt="" height="20">
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -60,9 +64,12 @@
                 selectedUser: {},
                 description: '',
                 dateTo: '',
-                timeTo: '',
-                selectedProduct:{},
-                addStatus: '',
+                timeTo: {
+                    hh: null,
+                    mm: null,
+                },
+                selectedProduct:[],
+                preload: false
             }
         },
         methods: {
@@ -92,33 +99,69 @@
             selectProduct(data){
                 this.selectedProduct=data
             },
+            setTime(data){
+                this.timeTo.hh = data.data.hh
+                this.timeTo.mm = data.data.mm
+            },
             addlog(){
                 // console.log(this.selectedUser,this.selectedProduct,this.description, this.customFormatter(this.dateTo))
-                this.addStatus = 'wait'
+                this.preload = true
                 let datetime = this.customFormatter(this.dateTo)
-                console.log(datetime)
-                // let fd = new FormData
-                // fd.append('userId', this.selectedUser.index)
-                // fd.append('productlist',JSON.stringify(this.selectedProduct))
-                // fd.append('description',this.description)
-                // fd.append('dateToContact',)
-                //
-                // fd.append('log','add')
-                // axios.post(this.$store.getters.getPostUrl, fd).then(res=>{
-                //     // console.log(res.data)
-                //     if(res.data.mess == 'Sql INSERT is ok'){
-                //         this.addStatus = 'added'
-                //         setTimeout(()=>{
-                //             this.addStatus = ''
-                //             this.modal = false
-                //             this.dateTo=''
-                //         },5000)
-                //     }
-                // })
+                let fd = new FormData
+                fd.append('userId', this.selectedUser.index)
+                fd.append('productlist',JSON.stringify(this.selectedProduct))
+                fd.append('description',this.description)
+                fd.append('dateToContact', datetime+' '+this.timeTo.hh+':'+this.timeTo.mm)
+                fd.append('log','add')
+                axios.post(this.$store.getters.getPostUrl, fd).then(res=>{
+                    if(res.data.mess == 'Sql INSERT is ok'){
+                        this.preload = false
+                        setTimeout(()=>{
+                            this.modal = false
+                            this.dateTo=''
+                        },1000)
+                    }
+                })
             },
         },
         created(){
             this.createUsersList()
+        },
+        computed: {
+            addStatus() {
+                let user, desc, date, time, product = false
+                if (this.selectedUser.index!=undefined) {
+                    user = true
+                }else{
+                    user = false
+                }
+                if(this.description!=''){
+                    desc = true
+                }else{
+                    desc = false
+                }
+                if(this.dateTo!=''){
+                    date = true
+                }else{
+                    date = false
+                }
+                if(this.timeTo.hh!=null&&this.timeTo.mm!=null){
+                    time = true
+                }else{
+                    time = false
+                }
+                if(this.selectedProduct.length>0){
+                    product = true
+                }else{
+                    product = false
+                }
+                if(user&&desc&&date&&time&&product){
+                    return ''
+                }else{
+                    return 'disabled'
+                }
+            }
+
         }
     }
 </script>

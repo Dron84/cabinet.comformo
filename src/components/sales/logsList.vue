@@ -18,7 +18,7 @@
                     <div class="centrize">{{item.date}}</div>
                     <div class="centrize">{{item.description}}</div>
                     <div class="centrize">{{generateProductList(item.productlist)}}</div>
-                    <div class="centrize">{{item.dateToContact.split(' ')[0]}}</div>
+                    <div class="centrize">{{item.dateToContact}}</div>
                 </div>
             </div>
             <div class="table_body" v-else-if="preload == false && logsList=='Sql is empty'">
