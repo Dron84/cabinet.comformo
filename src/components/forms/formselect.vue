@@ -1,7 +1,7 @@
 <template>
     <div class="input_group_select">
         <Multiselect v-model="value" :options="options" :placeholder="placeholder" :label="selectLabelName" :track-by="selectLabelIndex" :searchable="searchable" @input="onSelect" :class="[value!='' ? okClass : errorClass]" :multiple="multiple" :close-on-select="closeOnSelect" :hideSelected="hideSelected"></Multiselect>
-        <label class="label-up" style="position: absolute;top: -6px;left: 6px;font-family: 'Brandon Grotesque';font-weight: 500;font-size: .8em;letter-spacing: .05em;line-height: .8em;text-align: left;z-index: 1;color: #2f2f2f;background-color: #fff;">{{labelName}}</label>
+        <label class="label-up">{{labelName}}</label>
     </div>
 </template>
 

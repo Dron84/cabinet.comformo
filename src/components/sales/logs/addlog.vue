@@ -20,6 +20,9 @@
                                     <date class="form-control valid" id="dateTo" v-model="dateTo"></date>
                                     <label for="dateTo" class="label-up">Date to Contact</label>
                                 </div>
+                                <div class="input_group">
+                                    <timepicker format="hh:mm" v-model="timeTo"></timepicker>
+                                </div>
                                 <forminput labelName="Description" @inputModel="descriptionInput($event)"></forminput>
                                 <formproductselect :hideSelected="true" @selectedProduct="selectProduct($event)" labelName="Product" :placeholder="''" :multiple="true" :closeOnSelect="false"></formproductselect>
                             </div>
@@ -41,11 +44,12 @@
     import forminput from '@/components/forms/formInput'
     import formselect from '@/components/forms/formselect'
     import formproductselect from '@/components/forms/formproductselect.vue'
+    import timepicker from 'vue2-timepicker'
     import axios from 'axios'
     let moment = require('moment');
     export default {
         name: "addlog",
-        components:{forminput,formselect,date,formproductselect},
+        components:{forminput,formselect,date,formproductselect,timepicker},
         data(){
             return{
                 modal: false,
@@ -56,6 +60,7 @@
                 selectedUser: {},
                 description: '',
                 dateTo: '',
+                timeTo: '',
                 selectedProduct:{},
                 addStatus: '',
             }
@@ -88,25 +93,28 @@
                 this.selectedProduct=data
             },
             addlog(){
-                console.log(this.selectedUser,this.selectedProduct,this.description, this.customFormatter(this.dateTo))
+                // console.log(this.selectedUser,this.selectedProduct,this.description, this.customFormatter(this.dateTo))
                 this.addStatus = 'wait'
-                let fd = new FormData
-                fd.append('userId', this.selectedUser.index)
-                fd.append('productlist',JSON.stringify(this.selectedProduct))
-                fd.append('description',this.description)
-                fd.append('dateToContact',this.customFormatter(this.dateTo))
-                fd.append('log','add')
-                axios.post(this.$store.getters.getPostUrl, fd).then(res=>{
-                    // console.log(res.data)
-                    if(res.data.mess == 'Sql INSERT is ok'){
-                        this.addStatus = 'added'
-                        setTimeout(()=>{
-                            this.addStatus = ''
-                            this.modal = false
-                            this.dateTo=''
-                        },5000)
-                    }
-                })
+                let datetime = this.customFormatter(this.dateTo)
+                console.log(datetime)
+                // let fd = new FormData
+                // fd.append('userId', this.selectedUser.index)
+                // fd.append('productlist',JSON.stringify(this.selectedProduct))
+                // fd.append('description',this.description)
+                // fd.append('dateToContact',)
+                //
+                // fd.append('log','add')
+                // axios.post(this.$store.getters.getPostUrl, fd).then(res=>{
+                //     // console.log(res.data)
+                //     if(res.data.mess == 'Sql INSERT is ok'){
+                //         this.addStatus = 'added'
+                //         setTimeout(()=>{
+                //             this.addStatus = ''
+                //             this.modal = false
+                //             this.dateTo=''
+                //         },5000)
+                //     }
+                // })
             },
         },
         created(){

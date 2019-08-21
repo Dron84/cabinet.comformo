@@ -444,7 +444,6 @@ a
       letter-spacing: 0.05em
       line-height: .8em
       text-align: left
-      z-index: 1
       color: $prifile_header
       background-color: $bg_color
     &:disabled
@@ -460,7 +459,6 @@ a
       letter-spacing: 0.05em
       line-height: .8em
       text-align: left
-      z-index: 1
       color: $prifile_header
       background-color: $bg_color
   textarea
@@ -729,6 +727,8 @@ a
     border: 1px solid $profile_input_border_ok
   .err
     border: 1px solid $profile_input_border_err
+  .time-picker
+    border: 1px solid $profile_input_border_ok
 .vs__dropdown-menu
   z-index: 999 !important
 .col1toCol1
@@ -2109,6 +2109,7 @@ svg
   border: 1px solid $accent
   bottom: 73px
   right: 74px
+  z-index: 999
 .addlog-enter-active
   width: 0
   min-width: 0
