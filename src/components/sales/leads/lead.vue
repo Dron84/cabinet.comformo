@@ -90,36 +90,7 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-7 border" style="background-color: rgba(204,204,204,.2);">
-                <h3 style="margin: 10px;">Lead LOG</h3>
-                <div class="table" style="margin-top: 10px; max-height: 100%;">
-                    <div class="tableHeader">
-                        <div class="centrize">File Name</div>
-                        <div class="centrize">File date</div>
-                        <div class="centrize">Open file</div>
-                        <div class="centrize">Save file</div>
-                        <div class="centrize">Status
-                            <changeStatus imageLink="/static/img/filter.svg" imageTitle="Change Filter"
-                                          :dropDownList="filterList" statusNow="Not filtered"
-                                          @selectedItem="changeFilter($event)"></changeStatus>
-                        </div>
-                    </div>
-                    <div class="table_body" style="max-height: 100%;">
-                        <div class="tableRow searchRow" v-for="item in docs">
-                            <div class="centrize">{{item.file_name.replace(item.uniqid,'')}}</div>
-                            <div class="centrize">{{item.date}}</div>
-                            <div class="centrize"><a :href="showUrl(item,company.id)" target="_blank" class="button"
-                                                     style="height: 30px;">OPEN</a></div>
-                            <div class="centrize"><a :href="loadUrl(item,company.id)" target="_blank" class="button"
-                                                     style="height: 30px;">Save</a></div>
-                            <div class="centrize">
-                                <changeStatus :statusNow="item.status" :dropDownList="StatusDropdownList"
-                                              @selectedItem="changeStatus($event,item.id)"></changeStatus>
-                            </div>
-                            <div class="centrize searchStatus" style="display: none;">{{item.status}}</div>
-                        </div>
-                    </div>
-                </div>
-
+                <logsList :id="$route.params.id"></logsList>
             </div>
         </div>
 
@@ -136,6 +107,7 @@
     import formInputwebsite from '@/components/forms/formInputwebsite'
     import formselect from '@/components/forms/formselect'
     import formselectCountry from '@/components/forms/formselectCountry'
+    import logsList from '@/components/sales/leads/logsList.vue'
     import axios from 'axios'
 
     const {base64encode, base64decode} = require('nodejs-base64');
@@ -150,7 +122,8 @@
             formInput,
             formselect,
             formInputwebsite,
-            formselectCountry
+            formselectCountry,
+            logsList,
         },
         data() {
             return {
@@ -167,6 +140,7 @@
                         label: 'Confirm'
                     },
                 ],
+
                 filterList: [
                     {index: null, label: 'Not filtered'},
                     {index: 'loaded', label: 'loaded'},
