@@ -51,7 +51,7 @@
 
 <script>
     import axios from 'axios'
-    import register from '@/components/admin/authRegister.vue'
+    import register from '@/components/applicant/authRegister.vue'
     export default {
         name: "users",
         components:{axios,register},

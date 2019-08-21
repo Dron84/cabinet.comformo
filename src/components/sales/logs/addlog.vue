@@ -93,7 +93,7 @@
                 let fd = new FormData
                 fd.append('userId', this.selectedUser.index)
                 fd.append('productlist',JSON.stringify(this.selectedProduct))
-                fd.append('descripton',this.description)
+                fd.append('description',this.description)
                 fd.append('dateToContact',this.customFormatter(this.dateTo))
                 fd.append('log','add')
                 axios.post(this.$store.getters.getPostUrl, fd).then(res=>{

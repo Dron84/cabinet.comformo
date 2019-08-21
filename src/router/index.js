@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //applicant
-import myprofile from '@/components/admin/myprofile'
-import UserSettings from '@/components/admin/UserSettings'
-import Services from '@/components/admin/services'
-import Packages from '@/components/admin/package'
-import Payment from '@/components/admin/payments2'
-import dilligence from '@/components/admin/dilligence'
-import additionalService from '@/components/admin/additionalService'
-import Companys from '@/components/admin/companys'
-import Company from '@/components/admin/company'
-import applicant_doc from '@/components/admin/applicant_doc'
-import AddCompany from '@/components/admin/addCompany'
-import support from '@/components/admin/support'
+import myprofile from '@/components/applicant/myprofile'
+import UserSettings from '@/components/applicant/UserSettings'
+import Services from '@/components/applicant/services'
+import Packages from '@/components/applicant/package'
+import Payment from '@/components/applicant/payments2'
+import dilligence from '@/components/applicant/dilligence'
+import additionalService from '@/components/applicant/additionalService'
+import Companys from '@/components/applicant/companys'
+import Company from '@/components/applicant/company'
+import applicant_doc from '@/components/applicant/applicant_doc'
+import AddCompany from '@/components/applicant/addCompany'
+import support from '@/components/applicant/support'
 //applicant end
 //manager
 import manager_approve          from '@/components/manager/approve'
@@ -43,9 +43,9 @@ import agent_alldocs          from '@/components/agent/alldocs'
 import agent_AddCompany       from '@/components/agent/addCompany'
 //agent end
 //auth from all
-import authLogin from '@/components/admin/authLogin'
-import authRegister from '@/components/admin/authRegister'
-import forgotPassword from '@/components/admin/forgotPassword'
+import authLogin from '@/components/applicant/authLogin'
+import authRegister from '@/components/applicant/authRegister'
+import forgotPassword from '@/components/applicant/forgotPassword'
 //auth end
 
 //err component

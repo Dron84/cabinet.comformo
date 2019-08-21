@@ -83,7 +83,7 @@
 <script>
     import axios from 'axios'
     import DoughnutChart from 'vue-doughnut-chart'
-    import signature from '@/components/admin/company/signature'
+    import signature from '@/components/applicant/company/signature'
 
     export default {
         name: "fatca",

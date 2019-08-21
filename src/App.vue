@@ -207,8 +207,8 @@
 
 <script>
   import VueCookie from 'vue-cookie'
-  import authLogin from '@/components/admin/authLogin'
-  import Chats from '@/components/admin/chat'
+  import authLogin from '@/components/applicant/authLogin'
+  import Chats from '@/components/applicant/chat'
   import foot from '@/components/footer'
   import addlog from '@/components/sales/logs/addlog'
 export default {

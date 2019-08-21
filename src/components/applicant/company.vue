@@ -21,11 +21,11 @@
 </template>
 
 <script>
-    import general from '@/components/admin/company/general'
-    import files from '@/components/admin/company/files'
-    import ubo from '@/components/admin/company/ubo'
-    import fatca from '@/components/admin/company/fatca'
-    import dilligance from '@/components/admin/company/dilligance'
+    import general from '@/components/applicant/company/general'
+    import files from '@/components/applicant/company/files'
+    import ubo from '@/components/applicant/company/ubo'
+    import fatca from '@/components/applicant/company/fatca'
+    import dilligance from '@/components/applicant/company/dilligance'
     import pdfMake from 'pdfmake'
     import pdfFonts from "pdfmake/build/vfs_fonts";
     import axios from 'axios'

@@ -107,7 +107,7 @@
     import formInputwebsite from '@/components/forms/formInputwebsite'
     import formselect from '@/components/forms/formselect'
     import formselectCountry from '@/components/forms/formselectCountry'
-    import logsList from '@/components/sales/leads/logsList.vue'
+    import logsList from '@/components/sales/logsList.vue'
     import axios from 'axios'
 
     const {base64encode, base64decode} = require('nodejs-base64');

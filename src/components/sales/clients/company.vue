@@ -48,6 +48,7 @@
                     </div>
                 </div>
 
+                <logsList :id="$route.params.id.split(',')[0]"></logsList>
             </div>
         </div>
         <div class="row" style="margin-top: 40px;">
@@ -80,10 +81,11 @@
 <script>
     import changeStatus from '@/components/forms/changeStatus'
     const { base64encode, base64decode } = require('nodejs-base64');
+    import logsList from '@/components/sales/logsList.vue'
     import axios from 'axios'
     export default {
         name: "company",
-        components:{changeStatus,},
+        components:{changeStatus,logsList},
         data(){
             return{
                 client: {},
