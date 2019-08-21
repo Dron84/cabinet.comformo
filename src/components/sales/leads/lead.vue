@@ -90,6 +90,7 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-7 border" style="background-color: rgba(204,204,204,.2);">
+                <h3 style="margin: 10px;">Lead LOG</h3>
                 <logsList :id="$route.params.id"></logsList>
             </div>
         </div>

@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <h3 style="margin: 10px;">Lead LOG</h3>
-        <div class="table" style="margin-top: 10px; max-height: 100%;">
+    <div class="table" style="margin-top: 10px; max-height: 100%;">
             <div class="tableHeader">
                 <div class="centrize">last Date</div>
                 <div class="centrize">Description</div>
@@ -27,7 +25,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
