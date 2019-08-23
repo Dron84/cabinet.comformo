@@ -1,5 +1,5 @@
 <template>
-    <div class="changeStatus" @mouseover="hover = true" @mouseout="hover=false" style="position: relative;">
+    <div class="changeStatus" @mouseover="hover = true" @mouseout="hover=false">
         <img :src="imageLink" class="edit" :title="imageTitle" ><span class="onmouse">{{statusNow}}</span>
         <div class="downStatus" :class="{'show': hover==true}" :style="'width: '+downStatusWidth+'px;'">
             <ul>
