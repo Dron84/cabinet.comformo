@@ -1004,7 +1004,7 @@ class func
                                   <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Company Under Registration</h1>
             
                                     <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
-                                      <b>Dear ".$userData['name']."</b>
+                                      <b>Dear ".$userData['firstName']." ".$userData['lastName']."</b>
                                     </p>
                                     <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
                                       We are pleased to inform you that your company is under registration.
@@ -1092,6 +1092,948 @@ class func
             </body>
             </html>
             ";
+    }
+
+    private function htmlPaymentReceived(array $userData){
+        return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\"
+          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html\" />
+    <title>Document</title>
+</head>
+<body style=\"background-color: #d6d6d6; margin:0; font-family: 'Arial', Sans-serif;\">
+<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto; padding:0; max-width: 500px; width: 100%; background-color: #ffffff;\">
+    <tr>
+        <td>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 40px 15px;\">
+                <tr>
+                    <td style=\"padding: 5px; text-align:center;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%;
+            background-image: url(http://comformo.com/wp-content/uploads/2019/07/payment-received.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;\">
+                <tr>
+                    <td style=\"height: 220px;\">
+
+                    </td>
+                </tr>
+            </table>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 40px 45px 0 45px; border-bottom: 1px solid #efeded;
+              background-image: url(https://comformo.com/wp-content/uploads/2019/04/paper-boat.png);
+              background-repeat: no-repeat;
+              background-size: 24%;
+              background-position: bottom 7% right 8%;\">
+                <!-- <tr>
+                    <td>
+                        <h1 style=\"text-align:center; font-weight: 600; font-size: 18px; color: #000000; margin: 0 0 20px;\">3. Lorem ipsum dolor</h1>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td>
+                      <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Payment Received</h1>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          <b>Dear ".$userData['firstName']." ".$userData['lastName']."</b>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          We just wanted to drop you a quick note to let you know that we have received your recent payment for invoice. Thank you very much. We really appreciate it.
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Let us know if you have any questions by calling <br><span style=\"color: #fd8e2a\">+44 203 290 0530</span> or emailing <span style=\"color: #fd8e2a\">office@comformo.com.</span>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;margin-bottom: 30px;\">
+                          Best regards,<br>
+                          Comformo
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 35px 45px 20px;\">
+                <tr>
+                    <td style=\"padding-right: 15px;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                    <td style=\"float:right;\">
+                      <ul style=\"margin: 0; padding: 0; list-style: none; margin: 15px 0 10px;\">
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"tel:+442032900530\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f; font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/phone-call-.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> +44 203 290 0530
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"mailto:office@comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/envelope.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> office@comformo.com
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/skype.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> comformo.com
+                              </a>
+                          </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 0 45px;\">
+                <tr>
+                    <td>
+                        <ul style=\"margin: 0; padding: 0; list-style: none; text-align: center; margin: 15px 0 10px;\">
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/privacy-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Privacy Policy</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/refund-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Returns & Refunds</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/terms-and-conditions/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 45px 20px;\">
+                <tr>
+                    <td>
+                      <p style=\"font-size: 9px; color: #9e9998; font-weight: 500; line-height: 1.7;max-width: 200px;\">
+                        Copyright 2019 © Comformo Ltd, trading as one of the top Quality Company formations
+                      </p>
+                    </td>
+                    <td>
+                      <p style=\"float: right;\">
+                        <img src=\"https://comformo.com/wp-content/uploads/2019/07/flagss.png\" alt=\"Payments\" width=\"100\" height=\"20\" style=\"max-width: 100%; height: auto; \">
+                      </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+";
+    }
+
+    private function htmlNameChoosenApproved(array $userData){
+        return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\"
+          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html\" />
+    <title>Document</title>
+</head>
+<body style=\"background-color: #d6d6d6; margin:0; font-family: 'Arial', Sans-serif;\">
+<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto; padding:0; max-width: 500px; width: 100%; background-color: #ffffff;\">
+    <tr>
+        <td>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 40px 15px;\">
+                <tr>
+                    <td style=\"padding: 5px; text-align:center;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%;
+            background-image: url(http://comformo.com/wp-content/uploads/2019/07/name-choosen-approved.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;\">
+                <tr>
+                    <td style=\"height: 220px;\">
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 40px 45px 0 45px; border-bottom: 1px solid #efeded;
+              background-image: url(https://comformo.com/wp-content/uploads/2019/04/paper-boat.png);
+              background-repeat: no-repeat;
+              background-size: 24%;
+              background-position: bottom 7% right 8%;\">
+
+                <tr>
+                    <td>
+                      <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Chosen name approved</h1>
+
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          <b>Dear ".$userData['firstName']." ".$userData['lastName']."</b>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          You have chosen a new name for your company.
+                          (This will start the process of company creation.)
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Let us know if you have any questions by calling <br><span style=\"color: #fd8e2a\">+44 203 290 0530</span> or emailing <span style=\"color: #fd8e2a\">office@comformo.com.</span>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;margin-bottom: 30px;\">
+                          Best regards,<br>
+                          Comformo
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 35px 45px 20px;\">
+                <tr>
+                    <td style=\"padding-right: 15px;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                    <td style=\"float:right;\">
+                      <ul style=\"margin: 0; padding: 0; list-style: none; margin: 15px 0 10px;\">
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"tel:+442032900530\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f; font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/phone-call-.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> +44 203 290 0530
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"mailto:office@comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/envelope.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> office@comformo.com
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/skype.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> comformo.com
+                              </a>
+                          </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 0 45px;\">
+                <tr>
+                    <td>
+                        <ul style=\"margin: 0; padding: 0; list-style: none; text-align: center; margin: 15px 0 10px;\">
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/privacy-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Privacy Policy</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/refund-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Returns & Refunds</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/terms-and-conditions/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 45px 20px;\">
+                <tr>
+                    <td>
+                      <p style=\"font-size: 9px; color: #9e9998; font-weight: 500; line-height: 1.7;max-width: 200px;\">
+                        Copyright 2019 © Comformo Ltd, trading as one of the top Quality Company formations
+                      </p>
+                    </td>
+                    <td>
+                      <p style=\"float: right;\">
+                        <img src=\"https://comformo.com/wp-content/uploads/2019/07/flagss.png\" alt=\"Payments\" width=\"100\" height=\"20\" style=\"max-width: 100%; height: auto; \">
+                      </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+";
+    }
+
+    private function htmlDocumentsOnReview(array $userData){
+        return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\"
+          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html\" />
+    <title>Document</title>
+</head>
+<body style=\"background-color: #d6d6d6; margin:0; font-family: 'Arial', Sans-serif;\">
+<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto; padding:0; max-width: 500px; width: 100%; background-color: #ffffff;\">
+    <tr>
+        <td>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 40px 15px;\">
+                <tr>
+                    <td style=\"padding: 5px; text-align:center;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%;
+            background-image: url(http://comformo.com/wp-content/uploads/2019/07/documents-on-review.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;\">
+                <tr>
+                    <td style=\"height: 220px;\">
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 40px 45px 0 45px; border-bottom: 1px solid #efeded;
+              background-image: url(https://comformo.com/wp-content/uploads/2019/04/paper-boat.png);
+              background-repeat: no-repeat;
+              background-size: 24%;
+              background-position: bottom 7% right 8%;\">
+
+                <tr>
+                    <td>
+                      <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Documents on review</h1>
+
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          <b>Dear ".$userData['firstName'].' '.$userData['lastName']."</b>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          This email confirms that your document is under review. We will contact you shortly. 
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Let us know if you have any questions by calling <br><span style=\"color: #fd8e2a\">+44 203 290 0530</span> or emailing <span style=\"color: #fd8e2a\">office@comformo.com.</span>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;margin-bottom: 30px;\">
+                          Best regards,<br>
+                          Comformo
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 35px 45px 20px;\">
+                <tr>
+                    <td style=\"padding-right: 15px;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                    <td style=\"float:right;\">
+                      <ul style=\"margin: 0; padding: 0; list-style: none; margin: 15px 0 10px;\">
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"tel:+442032900530\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f; font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/phone-call-.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> +44 203 290 0530
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"mailto:office@comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/envelope.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> office@comformo.com
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/skype.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> comformo.com
+                              </a>
+                          </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 0 45px;\">
+                <tr>
+                    <td>
+                        <ul style=\"margin: 0; padding: 0; list-style: none; text-align: center; margin: 15px 0 10px;\">
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/privacy-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Privacy Policy</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/refund-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Returns & Refunds</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/terms-and-conditions/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 45px 20px;\">
+                <tr>
+                    <td>
+                      <p style=\"font-size: 9px; color: #9e9998; font-weight: 500; line-height: 1.7;max-width: 200px;\">
+                        Copyright 2019 © Comformo Ltd, trading as one of the top Quality Company formations
+                      </p>
+                    </td>
+                    <td>
+                      <p style=\"float: right;\">
+                        <img src=\"https://comformo.com/wp-content/uploads/2019/07/flagss.png\" alt=\"Payments\" width=\"100\" height=\"20\" style=\"max-width: 100%; height: auto; \">
+                      </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+";
+    }
+
+    private function htmlDocumentsUnderRegistryReview(array $userData){
+        return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\"
+          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html\" />
+    <title>Document</title>
+</head>
+<body style=\"background-color: #d6d6d6; margin:0; font-family: 'Arial', Sans-serif;\">
+<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto; padding:0; max-width: 500px; width: 100%; background-color: #ffffff;\">
+    <tr>
+        <td>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 40px 15px;\">
+                <tr>
+                    <td style=\"padding: 5px; text-align:center;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%;
+            background-image: url(http://comformo.com/wp-content/uploads/2019/07/documents-under-registry-review.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;\">
+                <tr>
+                    <td style=\"height: 220px;\">
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 40px 45px 0 45px; border-bottom: 1px solid #efeded;
+              background-image: url(https://comformo.com/wp-content/uploads/2019/04/paper-boat.png);
+              background-repeat: no-repeat;
+              background-size: 24%;
+              background-position: bottom 7% right 8%;\">
+
+                <tr>
+                    <td>
+                      <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Documents under registry review</h1>
+
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          <b>Dear ".$userData['firstName'].' '.$userData['lastName']."</b>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          This email is to inform you that your document is pending in the registry. It will take some time, so please be patient. Our manager will contact you as soon as all documents are approved.
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Let us know if you have any questions by calling <br><span style=\"color: #fd8e2a\">+44 203 290 0530</span> or emailing <span style=\"color: #fd8e2a\">office@comformo.com.</span>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;margin-bottom: 30px;\">
+                          Best regards,<br>
+                          Comformo
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 35px 45px 20px;\">
+                <tr>
+                    <td style=\"padding-right: 15px;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                    <td style=\"float:right;\">
+                      <ul style=\"margin: 0; padding: 0; list-style: none; margin: 15px 0 10px;\">
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"tel:+442032900530\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f; font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/phone-call-.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> +44 203 290 0530
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"mailto:office@comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/envelope.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> office@comformo.com
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/skype.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> comformo.com
+                              </a>
+                          </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 0 45px;\">
+                <tr>
+                    <td>
+                        <ul style=\"margin: 0; padding: 0; list-style: none; text-align: center; margin: 15px 0 10px;\">
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/privacy-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Privacy Policy</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/refund-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Returns & Refunds</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/terms-and-conditions/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 45px 20px;\">
+                <tr>
+                    <td>
+                      <p style=\"font-size: 9px; color: #9e9998; font-weight: 500; line-height: 1.7;max-width: 200px;\">
+                        Copyright 2019 © Comformo Ltd, trading as one of the top Quality Company formations
+                      </p>
+                    </td>
+                    <td>
+                      <p style=\"float: right;\">
+                        <img src=\"https://comformo.com/wp-content/uploads/2019/07/flagss.png\" alt=\"Payments\" width=\"100\" height=\"20\" style=\"max-width: 100%; height: auto; \">
+                      </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+";
+    }
+
+    private function htmlDocumentsAcceptedByRegister(array $userData){
+        return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\"
+          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html\" />
+    <title>Document</title>
+</head>
+<body style=\"background-color: #d6d6d6; margin:0; font-family: 'Arial', Sans-serif;\">
+<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto; padding:0; max-width: 500px; width: 100%; background-color: #ffffff;\">
+    <tr>
+        <td>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 40px 15px;\">
+                <tr>
+                    <td style=\"padding: 5px; text-align:center;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%;
+            background-image: url(http://comformo.com/wp-content/uploads/2019/07/documents-accepted-by-register.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;\">
+                <tr>
+                    <td style=\"height: 220px;\">
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 40px 45px 0 45px; border-bottom: 1px solid #efeded;
+              background-image: url(https://comformo.com/wp-content/uploads/2019/04/paper-boat.png);
+              background-repeat: no-repeat;
+              background-size: 24%;
+              background-position: bottom 7% right 8%;\">
+
+                <tr>
+                    <td>
+                      <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Documents accepted by register</h1>
+
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          <b>Dear ".$userData['firstName'].' '.$userData['lastName']."</b>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          We are pleased to inform you that your documents have been accepted in accordance with the registry. It will be some time, however, before company registration begins. It will take some time, so please be patient. Our manager will contact you as soon as all documents are approved.
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Let us know if you have any questions by calling <br><span style=\"color: #fd8e2a\">+44 203 290 0530</span> or emailing <span style=\"color: #fd8e2a\">office@comformo.com.</span>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;margin-bottom: 30px;\">
+                          Best regards,<br>
+                          Comformo
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 35px 45px 20px;\">
+                <tr>
+                    <td style=\"padding-right: 15px;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                    <td style=\"float:right;\">
+                      <ul style=\"margin: 0; padding: 0; list-style: none; margin: 15px 0 10px;\">
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"tel:+442032900530\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f; font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/phone-call-.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> +44 203 290 0530
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"mailto:office@comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/envelope.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> office@comformo.com
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/skype.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> comformo.com
+                              </a>
+                          </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 0 45px;\">
+                <tr>
+                    <td>
+                        <ul style=\"margin: 0; padding: 0; list-style: none; text-align: center; margin: 15px 0 10px;\">
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/privacy-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Privacy Policy</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/refund-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Returns & Refunds</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/terms-and-conditions/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 45px 20px;\">
+                <tr>
+                    <td>
+                      <p style=\"font-size: 9px; color: #9e9998; font-weight: 500; line-height: 1.7;max-width: 200px;\">
+                        Copyright 2019 © Comformo Ltd, trading as one of the top Quality Company formations
+                      </p>
+                    </td>
+                    <td>
+                      <p style=\"float: right;\">
+                        <img src=\"https://comformo.com/wp-content/uploads/2019/07/flagss.png\" alt=\"Payments\" width=\"100\" height=\"20\" style=\"max-width: 100%; height: auto; \">
+                      </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+";
+    }
+
+    private function htmlCompanyRegistered(array $userData){
+        return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\"
+          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html\" />
+    <title>Document</title>
+</head>
+<body style=\"background-color: #d6d6d6; margin:0; font-family: 'Arial', Sans-serif;\">
+<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto; padding:0; max-width: 500px; width: 100%; background-color: #ffffff;\">
+    <tr>
+        <td>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 40px 15px;\">
+                <tr>
+                    <td style=\"padding: 5px; text-align:center;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%;
+            background-image: url(http://comformo.com/wp-content/uploads/2019/07/Company-registered.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;\">
+                <tr>
+                    <td style=\"height: 220px;\">
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 40px 45px 0 45px; border-bottom: 1px solid #efeded;
+              background-image: url(https://comformo.com/wp-content/uploads/2019/04/paper-boat.png);
+              background-repeat: no-repeat;
+              background-size: 24%;
+              background-position: bottom 7% right 8%;\">
+
+                <tr>
+                    <td>
+                      <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Company registered</h1>
+
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          <b>Dear ".$userData['firstName']." ".$userData['lastName']."</b>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Congratulations, your company has been successfully registered. We are glad that you have chosen us and our service. Our manager will contact you shortly to discuss sending documents.
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Let us know if you have any questions by calling <br><span style=\"color: #fd8e2a\">+44 203 290 0530</span> or emailing <span style=\"color: #fd8e2a\">office@comformo.com.</span>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;margin-bottom: 30px;\">
+                          Best regards,<br>
+                          Comformo
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 35px 45px 20px;\">
+                <tr>
+                    <td style=\"padding-right: 15px;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                    <td style=\"float:right;\">
+                      <ul style=\"margin: 0; padding: 0; list-style: none; margin: 15px 0 10px;\">
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"tel:+442032900530\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f; font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/phone-call-.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> +44 203 290 0530
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"mailto:office@comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/envelope.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> office@comformo.com
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/skype.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> comformo.com
+                              </a>
+                          </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 0 45px;\">
+                <tr>
+                    <td>
+                        <ul style=\"margin: 0; padding: 0; list-style: none; text-align: center; margin: 15px 0 10px;\">
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/privacy-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Privacy Policy</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/refund-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Returns & Refunds</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/terms-and-conditions/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 45px 20px;\">
+                <tr>
+                    <td>
+                      <p style=\"font-size: 9px; color: #9e9998; font-weight: 500; line-height: 1.7;max-width: 200px;\">
+                        Copyright 2019 © Comformo Ltd, trading as one of the top Quality Company formations
+                      </p>
+                    </td>
+                    <td>
+                      <p style=\"float: right;\">
+                        <img src=\"https://comformo.com/wp-content/uploads/2019/07/flagss.png\" alt=\"Payments\" width=\"100\" height=\"20\" style=\"max-width: 100%; height: auto; \">
+                      </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+";
+    }
+
+    private function htmlDocumentsShipped(array $userData){
+        return "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\"
+          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
+    <meta http-equiv=\"Content-Type\" content=\"text/html\" />
+    <title>Document</title>
+</head>
+<body style=\"background-color: #d6d6d6; margin:0; font-family: 'Arial', Sans-serif;\">
+<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto; padding:0; max-width: 500px; width: 100%; background-color: #ffffff;\">
+    <tr>
+        <td>
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 40px 15px;\">
+                <tr>
+                    <td style=\"padding: 5px; text-align:center;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%;
+            background-image: url(http://comformo.com/wp-content/uploads/2019/07/documents-shipped.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;\">
+                <tr>
+                    <td style=\"height: 220px;\">
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 40px 45px 0 45px; border-bottom: 1px solid #efeded;
+              background-image: url(https://comformo.com/wp-content/uploads/2019/04/paper-boat.png);
+              background-repeat: no-repeat;
+              background-size: 24%;
+              background-position: bottom 7% right 8%;\">
+
+                <tr>
+                    <td>
+                      <h1 style=\"text-align:center; font-weight: 600; font-size: 33px; color: #e68024; margin: 0;\">Documents shipped</h1>
+
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          <b>Dear ".$userData['firstName']." ".$userData['lastName']."</b>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          This email confirms that your documents have been successfully sent.
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;\">
+                          Let us know if you have any questions by calling <br><span style=\"color: #fd8e2a\">+44 203 290 0530</span> or emailing <span style=\"color: #fd8e2a\">office@comformo.com.</span>
+                        </p>
+                        <p style=\"text-align: center; font-size: 16px; color: #9e9998; font-weight: 500; line-height: 1.7;margin-bottom: 30px;\">
+                          Best regards,<br>
+                          Comformo
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 35px 45px 20px;\">
+                <tr>
+                    <td style=\"padding-right: 15px;\">
+                        <a href=\"https://comformo.com/\"><img src=\"https://comformo.com/wp-content/uploads/2019/04/logo-comformo.png\" alt=\"Comformo\" width=\"140\" height=\"58\" style=\"max-width: 100%; height: auto;\"></a>
+                    </td>
+                    <td style=\"float:right;\">
+                      <ul style=\"margin: 0; padding: 0; list-style: none; margin: 15px 0 10px;\">
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"tel:+442032900530\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f; font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/phone-call-.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> +44 203 290 0530
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"mailto:office@comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/envelope.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> office@comformo.com
+                              </a>
+                          </li>
+                          <li style=\"margin: 0 5px 5px;\">
+                              <a href=\"comformo.com\" style=\"color: #908074; font-size: 13px; text-decoration: none; color: #ff810f;  font-size: 12px; font-weight: 700; display: flex; align-items: center;\">
+                                <img src=\"https://comformo.com/wp-content/uploads/2019/04/skype.png\" alt=\"number\" width=\"12\" height=\"auto\" style=\"margin-right: 10px; vertical-align: bottom;\"> comformo.com
+                              </a>
+                          </li>
+                      </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 0 45px;\">
+                <tr>
+                    <td>
+                        <ul style=\"margin: 0; padding: 0; list-style: none; text-align: center; margin: 15px 0 10px;\">
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/privacy-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Privacy Policy</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/refund-policy/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Returns & Refunds</a>
+                            </li>
+
+                            <li style=\"display: inline-block;\"><span style=\"color: #948e8e;\">|</span></li>
+
+                            <li style=\"display: inline-block; margin: 0 10px 5px;\">
+                                <a href=\"https://comformo.com/terms-and-conditions/\" style=\"text-decoration: none; color: #948e8e; font-size: 11px;\">Terms & Conditions</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0; padding:0; width: 100%; padding: 15px 45px 20px;\">
+                <tr>
+                    <td>
+                      <p style=\"font-size: 9px; color: #9e9998; font-weight: 500; line-height: 1.7;max-width: 200px;\">
+                        Copyright 2019 © Comformo Ltd, trading as one of the top Quality Company formations
+                      </p>
+                    </td>
+                    <td>
+                      <p style=\"float: right;\">
+                        <img src=\"https://comformo.com/wp-content/uploads/2019/07/flagss.png\" alt=\"Payments\" width=\"100\" height=\"20\" style=\"max-width: 100%; height: auto; \">
+                      </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+";
     }
     // END HTML EMAIL TEMPLATES
     //test email function
@@ -1478,8 +2420,9 @@ class func
         $sql = "INSERT INTO `companys` (" . $post['keys_string'] . ",companyStatus) VALUES (" . $post['values_string'] . ",'{\"general\":0,\"ubo\":0,\"dillegance\":0,\"fatca\":100}');";
         $addTask = array('whatdo'=>base64_encode('Create a company by name is:'.$postArray['companyName']),'datepickerstart'=>date('Y-m-d'),'shortname'=>base64_encode('Create Company from user ID: '.$postArray['applicantid']),'who'=>'30','howSendTask'=>$postArray['applicantid'],'status'=>'Active');
         $result['task']=$this->addTask($addTask,array());
-//        $htmlBody = $this->htmlCompanyUnderRegistration();
-//        $result['email']=$this->sendEmail();
+        $applicant = $this->sqlQuery("SELECT email,firstName,lastName FROM `users` WHERE id='".$postArray['applicantid']."';")[0];
+        $htmlBody = $this->htmlCompanyUnderRegistration($applicant);
+        $result['email']=$this->sendEmail();
         return $this->sqlQuery($sql);
     }
 
@@ -1765,7 +2708,43 @@ class func
     public function changeTaskStatus($id, $status)
     {
         $sql = "UPDATE `tasks` SET status='{$status}' WHERE id='{$id}';";
-        return $this->sqlQuery($sql);
+        $result = $this->sqlQuery($sql);
+        if($result['mess']=='Sql UPDATE is ok'){
+            $task = "SELECT * FROM `tasks` WHERE id='{$id}';";
+            $howSendTask = $this->sqlQuery($task)[0]['howSendTask'];
+            $user = "SELECT email,firstName,lastName FROM `users` WHERE id='{$howSendTask}';";
+            $userInfo = $this->sqlQuery($user)[0];
+            switch ($status){
+                case 'Payment Received':
+                    $htmlbody = $this->htmlPaymentReceived($userInfo);
+                    break;
+                case 'Name Choosen Approved':
+                    $htmlbody = $this->htmlNameChoosenApproved($userInfo);
+                    break;
+                case "Documents on review":
+                    $htmlbody = $this->htmlDocumentsOnReview($userInfo);
+                    break;
+                case "Company under registration":
+                    $htmlbody = $this->htmlCompanyUnderRegistration($userInfo);
+                    break;
+                case "Documents under registry review":
+                    $htmlbody = $this->htmlDocumentsUnderRegistryReview($userInfo);
+                    break;
+                case "Documents accepted by register":
+                    $htmlbody = $this->htmlDocumentsAcceptedByRegister($userInfo);
+                    break;
+                case "Company registered":
+                    $htmlbody = $this->htmlCompanyRegistered($userInfo);
+                    break;
+                case "Documents shipped":
+                    $htmlbody = $this->htmlDocumentsShipped($userInfo);
+                    break;
+
+            }
+
+            $result['email']=$this->sendEmail($userInfo['email'],$userInfo['email'],'Change status to '.$status,$htmlbody);
+        }
+        return $result;
     }
 
     public function loadCompanion()
