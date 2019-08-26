@@ -2164,11 +2164,11 @@ class func
             $allCountry = $this->loadJurisdiction();
             $ourCountry = $this->loadAgentJurisdiction();
 //
-//            $this->setCookie('login', 'true', 2);
-//            $this->setCookie('loginIn', $row['premission_group'], 2);
-//            $this->setCookie('email', $row['email'], 2);
-//            $this->setCookie('id', $row['id'], 2);
-//            $this->setCookie('phone', $row['phone'], 2);
+            $this->setCookie('login', 'true', 2);
+            $this->setCookie('loginIn', $row['premission_group'], 2);
+            $this->setCookie('email', $row['email'], 2);
+            $this->setCookie('id', $row['id'], 2);
+            $this->setCookie('phone', $row['phone'], 2);
 
             if ($row['premission_group'] == '6') {
                 return array('login' => true, 'loginin' => $row['premission_group'], 'userdata' => $row, 'allCountry' => $allCountry, 'ourCountry' => $ourCountry, 'myCompanys' => $myCompanys, 'managerData' => $managerData, 'sicCode' => $sicCodes);
