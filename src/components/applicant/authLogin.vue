@@ -57,7 +57,7 @@
               fd.append('password',this.user.pass);
               axios.post(this.$store.getters.getPostUrl, fd )
                   .then((res)=>{
-                      if (res.data.login==true){
+                      if(res.data.error==undefined&&res.data.login==true){
                           this.$store.commit('userlogin', res.data)
                           this.$store.commit('setCompanyCreate', false)
                           this.$store.commit('modal',false)
@@ -74,11 +74,11 @@
                               this.$router.push({path:'/sales/sales'})
                           }
                       }else{
+                          this.preload = false
+                          this.mess = res.data.error
                           this.$store.commit('setCompanyCreate', false)
                           this.$store.commit('modal',false)
-                          this.mess= res.data.error
                       }
-
                   })
           },
 

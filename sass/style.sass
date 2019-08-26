@@ -1904,14 +1904,19 @@ a.button
     font-size: .9em
     text-align: left
     transition: all .4s ease-in-out
-.changeStatus
-  display: block
-  position: absolute
-  span
+
+
+.statusBox
+  position: relative
+  .changeStatus
+    display: block
     position: relative
-    top: 2px
+    span
+      position: relative
+      top: 2px
   .downStatus
     position: absolute
+    top: 10px
     display: none
     width: 100px
     background-color: rgba(#ffffff, 1)

@@ -1,6 +1,8 @@
 <template>
-    <div class="changeStatus" @mouseover="hover = true" @mouseout="hover=false">
-        <img :src="imageLink" class="edit" :title="imageTitle" ><span class="onmouse">{{statusNow}}</span>
+    <div class="statusBox">
+        <div class="changeStatus" @click="hover = true">
+            <img :src="imageLink" class="edit" :title="imageTitle" ><span class="onmouse">{{statusNow}}</span>
+        </div>
         <div class="downStatus" :class="{'show': hover==true}" :style="'width: '+downStatusWidth+'px;'">
             <ul>
                 <li v-for="item in dropDownList" @click="selectItem(item.index)">{{item.label}}</li>
