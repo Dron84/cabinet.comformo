@@ -2,8 +2,6 @@
 @import 'donatspie'
 @import "animation"
 @import "colors"
-@import "footer"
-
 
 @import "bootstrap.min"
 @import "selectize"
@@ -226,100 +224,6 @@ span
       color: $menu_text_color_hover
       background: linear-gradient($gradient1 0%, $gradient2 0%, $gradient1 96.95%, $gradient1 100%)
       box-shadow: 0px 7px 13px $shadow
-footer
-  .top
-    display: grid
-    grid-template-columns: minmax(200px,1fr) repeat(3, minmax(100px, 1fr)) minmax(300px,3fr)
-    .logo
-      height: 50px
-    .main_link
-      color: $menu_text_color
-      text-decoration: none
-      font-family: "Brandon Grotesque Bold"
-      font-size: 1.1em
-      font-weight: 600
-    a
-      display: block
-      text-decoration: none
-      color: $menu_text_color
-      font-family: "Brandon Grotesque"
-      font-size: 1.1em
-      color: $menu_text_color_captions
-      &:hover
-        color: $accent
-  .bottom
-    margin-top: 30px
-    width: 100%
-    border-top: 1px solid rgba(#ccc,.5)
-    position: relative
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-wrap: wrap
-    height: 33px
-    a
-      margin: 0 10px
-      font-family: "Brandon Grotesque"
-      font-weight: normal
-      font-size: 1em
-      line-height: 1.2em
-      text-align: center
-      color: $menu_text_color_captions
-      text-decoration: none
-      display: flex
-      justify-content: center
-      align-items: center
-      position: relative
-      background: transparent
-      transition: all .4s ease-in-out
-      padding: 0 20px
-      &:not(:nth-child(1))
-        &::before
-          content: '|'
-          position: relative
-          right: 31px
-      &:hover
-        position: relative
-        padding: 0 20px
-        height: 33px
-        border-radius: 2px
-        color: $accent
-.subscribe_box
-  border-radius: 5px
-  border: 2px solid $accent
-  display: grid
-  grid-template-columns: 1.5fr 1fr
-  grid-template-areas: '. .'
-  input
-    width: 100%
-    height: 40px
-    background-color: transparent
-    border: none
-    outline: none
-    font-family: "Brandon Grotesque"
-    font-size: 1em
-    color: $menu_text_color
-    padding: 0 20px
-    &::placeholder
-      font-family: "Brandon Grotesque"
-      font-size: 1em
-      color: $menu_text_color
-  button
-    min-width: 150px
-    width: auto
-    cursor: pointer
-    border: none
-    font-family: "Brandon Grotesque"
-    font-size: 0.9em
-    color: $menu_text_color_hover
-    text-transform: uppercase
-    outline: none
-    background: linear-gradient($gradient1 0%, $gradient2 0%, $gradient1 96.95%, $gradient1 100%)
-    transition: all .5s ease-in-out
-    &:hover
-      transition: all .5s ease-in-out
-      background: linear-gradient($gradient2 0%, $gradient1 0%, $gradient2 96.95%, $gradient2 100%)
-
 
 .profile
   margin: 40px
@@ -444,7 +348,6 @@ a
       letter-spacing: 0.05em
       line-height: .8em
       text-align: left
-      z-index: 1
       color: $prifile_header
       background-color: $bg_color
     &:disabled
@@ -460,7 +363,6 @@ a
       letter-spacing: 0.05em
       line-height: .8em
       text-align: left
-      z-index: 1
       color: $prifile_header
       background-color: $bg_color
   textarea
@@ -729,6 +631,8 @@ a
     border: 1px solid $profile_input_border_ok
   .err
     border: 1px solid $profile_input_border_err
+  .time-picker
+    border: 1px solid $profile_input_border_ok
 .vs__dropdown-menu
   z-index: 999 !important
 .col1toCol1
@@ -2002,7 +1906,7 @@ a.button
     transition: all .4s ease-in-out
 .changeStatus
   display: block
-  //position: absolute
+  position: absolute
   span
     position: relative
     top: 2px
@@ -2109,6 +2013,7 @@ svg
   border: 1px solid $accent
   bottom: 73px
   right: 74px
+  z-index: 999
 .addlog-enter-active
   width: 0
   min-width: 0

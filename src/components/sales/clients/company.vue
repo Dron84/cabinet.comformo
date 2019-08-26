@@ -47,32 +47,14 @@
                         <div class="centrize">No documents for this company</div>
                     </div>
                 </div>
-
+                <h3 style="margin: 10px;">Client LOG</h3>
                 <logsList :id="$route.params.id.split(',')[0]"></logsList>
             </div>
         </div>
         <div class="row" style="margin-top: 40px;">
             <div class="col-md-12 border" style="background-color: rgba(204,204,204,.2);">
                 <h3 style="margin: 10px;">Lead Invoce</h3>
-                <div class="table" style="margin-top: 10px; max-height: 100%;">
-                    <div class="tableHeader">
-                        <div class="centrize">Id</div>
-                        <div class="centrize">Number Invoce</div>
-                        <div class="centrize">Sum</div>
-                        <div class="centrize">Description</div>
-                        <div class="centrize">Status <changeStatus imageLink="/static/img/filter.svg" imageTitle="Change Filter" :dropDownList="filterList" statusNow="Not filtered" @selectedItem="changeFilter($event)"></changeStatus></div>
-                    </div>
-                    <div class="table_body" style="max-height: 100%;">
-                        <div class="tableRow searchRow" v-for="item in invoces">
-                            <div class="centrize">{{item.id}}</div>
-                            <div class="centrize">{{item.num}}</div>
-                            <div class="centrize">{{item.sum}}</div>
-                            <div class="centrize">{{item.description}}</div>
-                            <div class="centrize"><changeStatus :statusNow="item.status" :dropDownList="StatusDropdownList" @selectedItem="changeStatus($event,item.id)"></changeStatus></div>
-                        </div>
-                    </div>
-                </div>
-
+                <invoceList :id="$route.params.id"></invoceList>
             </div>
         </div>
     </div>
@@ -82,10 +64,11 @@
     import changeStatus from '@/components/forms/changeStatus'
     const { base64encode, base64decode } = require('nodejs-base64');
     import logsList from '@/components/sales/logsList.vue'
+    import invoceList from '@/components/sales/invoceList.vue'
     import axios from 'axios'
     export default {
         name: "company",
-        components:{changeStatus,logsList},
+        components:{changeStatus,logsList,invoceList},
         data(){
             return{
                 client: {},
@@ -107,7 +90,6 @@
                     {index: 'Cancel', label: 'Cancel'},
                     {index: 'Confirm', label: 'Confirm'},
                 ],
-                invoces:[],
             }
         },
         methods:{
@@ -207,16 +189,10 @@
             showUrl(row,id){
                 return '/server/post/getFile.php?showmyfile='+row.base_name+'&companyId='+id+'&type='+row.type
             },
-            loadInvoces(){
-                axios.post(this.$store.getters.getPostUrl,'invoce=getAll').then(res=>{
-                    // console.log(res.data)
-                    this.invoces = res.data
-                })
-            }
+
         },
         created(){
             this.loadData()
-            this.loadInvoces()
         }
 
     }
