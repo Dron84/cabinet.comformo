@@ -25,7 +25,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
   .tg-column-wrapper .tg-column-1, .tg-column-wrapper .tg-column-2, .tg-column-wrapper .tg-column-3, .tg-column-wrapper .tg-column-4, .tg-column-wrapper .tg-column-5 {
     float: left;
     margin-right: 2%;

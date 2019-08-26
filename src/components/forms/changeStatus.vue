@@ -1,6 +1,6 @@
 <template>
     <div class="statusBox">
-        <div class="changeStatus" @click="hover = true">
+        <div class="changeStatus" @click="showHide">
             <img :src="imageLink" class="edit" :title="imageTitle" ><span class="onmouse">{{statusNow}}</span>
         </div>
         <div class="downStatus" :class="{'show': hover==true}" :style="'width: '+downStatusWidth+'px;'">
@@ -64,6 +64,13 @@
             selectItem(id){
                 this.hover=false
                 this.$emit('selectedItem', id);
+            },
+            showHide(){
+                if(this.hover){
+                    this.hover = false
+                }else{
+                    this.hover = true
+                }
             }
         }
 
