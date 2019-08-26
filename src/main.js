@@ -226,11 +226,11 @@ const store = new Vuex.Store({
             state.sicCode = userData.sicCode
             state.approveDocs=userData.approveDocs
             // console.log('href',window.location)
-            // VueCookie.set('login', userData.login,2)
-            // VueCookie.set('loginIn', userData.loginin,2)
-            // VueCookie.set('userData_phone', userData.userdata.phone,2)
-            // VueCookie.set('userData_email', userData.userdata.email,2)
-            // VueCookie.set('userData_id', userData.userdata.id,2)
+            VueCookie.set('login', userData.login,2)
+            VueCookie.set('loginIn', userData.loginin,2)
+            VueCookie.set('phone', userData.userdata.phone,2)
+            VueCookie.set('email', userData.userdata.email,2)
+            VueCookie.set('id', userData.userdata.id,2)
         },
         preload(state, newValue){
             state.preload = newValue
