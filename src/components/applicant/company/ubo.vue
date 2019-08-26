@@ -115,13 +115,13 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="input-wrapper">
-                                                <input type="text" id='ubo_phone' class="form-control" :class='[phone_valid == true ? inputOk : inputErr]' v-model="ubo_phone" required @change="checkPhone" @keypress="isNumber($event)">
+                                                <input type="text" id='ubo_phone' class="form-control" :class="[phone!= '' ? inputOk : inputErr]" v-model="ubo_phone" required @change="checkPhone" @keypress="isNumber($event)">
                                                 <label for="ubo_phone" class="label-up">Phone</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="input-wrapper">
-                                                <input type="text" id='ubo_fax' class="form-control" :class='[fax_valid == true ? inputOk : inputErr]' v-model="ubo_fax" required @change="checkFax" @keypress="isNumber($event)">
+                                                <input type="text" id='ubo_fax' class="form-control" :class="[fax != '' ? inputOk : inputErr]" v-model="ubo_fax" required @change="checkFax" @keypress="isNumber($event)">
                                                 <label for="ubo_fax" class="label-up">FAX</label>
                                             </div>
                                         </div>

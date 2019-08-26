@@ -2422,7 +2422,7 @@ class func
         $result['task']=$this->addTask($addTask,array());
         $applicant = $this->sqlQuery("SELECT email,firstName,lastName FROM `users` WHERE id='".$postArray['applicantid']."';")[0];
         $htmlBody = $this->htmlCompanyUnderRegistration($applicant);
-        $result['email']=$this->sendEmail();
+        $result['email']=$this->sendEmail($applicant['email'],$applicant['email'],'Company Under Registration',$htmlBody);
         return $this->sqlQuery($sql);
     }
 
